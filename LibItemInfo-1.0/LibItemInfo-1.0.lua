@@ -1,4 +1,4 @@
-local MAJOR, MINOR = "LibItemInfo-1.0", 2
+local MAJOR, MINOR = "LibItemInfo-1.0", 3
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not lib then return end
@@ -57,7 +57,7 @@ setmetatable(lib.cache, {
 			name = name,
 			quality = quality,
 			itemLevel = itemLevel,
-			reqLevel = requiredLevel,
+			reqLevel = reqLevel,
 			type = class,
 			subType = subClass,
 			invType = equipSlot,
