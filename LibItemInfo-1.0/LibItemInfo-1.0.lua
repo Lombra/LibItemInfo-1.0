@@ -50,6 +50,8 @@ setmetatable(lib.cache, {
 		end
 		if type(item) == "string" then
 			local baseItem = self[itemID]
+			-- apparently cases exist where a query using the item ID won't return any results even though a query with full link did immediately before
+			if not baseItem then return end
 			-- if the properties are equal to that of the base item, just point this entry at that
 			if quality == baseItem.quality and itemLevel == baseItem.itemLevel then
 				self[item] = baseItem
