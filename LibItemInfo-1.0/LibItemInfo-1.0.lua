@@ -1,4 +1,4 @@
-local MAJOR, MINOR = "LibItemInfo-1.0", 6
+local MAJOR, MINOR = "LibItemInfo-1.0", 7
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not lib then return end
@@ -43,7 +43,7 @@ setmetatable(lib.cache, {
 			if not itemID then return end
 			itemID = tonumber(itemID)
 		end
-		local name, link, quality, itemLevel, reqLevel, class, subClass, maxStack, equipSlot, icon, sellPrice, classID, subClassID, bindType, expansion, itemSetID, isReagent = GetItemInfo(item)
+		local name, link, quality, itemLevel, reqLevel, class, subClass, maxStack, equipSlot, icon, sellPrice, classID, subClassID, bindType, expansion, itemSetID, isReagent = C_Item.GetItemInfo(item)
 		if not name then
 			lib.queue[itemID] = true
 			lib.frame:RegisterEvent("GET_ITEM_INFO_RECEIVED")
@@ -74,4 +74,3 @@ setmetatable(lib.cache, {
 		return itemInfo
 	end,
 })
-
