@@ -11,11 +11,13 @@ If the item is cached, will return a table:
 ```
 items[13262] = {
 	name = "Ashbringer",
-	quality = 5,
+	quality = Enum.ItemQuality.Legendary,
 	itemLevel = 76,
-	reqLevel = 60,
-	type = "Weapon",
-	subType = "Two-Handed Swords",
+	requiredLevel = 60,
+	class = "Weapon",
+	classID = Enum.ItemClass.Weapon,
+	subClass = "Two-Handed Swords",
+	subClassID = Enum.ItemWeaponSubclass.Sword2H,
 	invType = "INVTYPE_2HWEAPON",
 	stackSize = 1,
 }
@@ -40,7 +42,7 @@ local ItemInfo = LibStub("LibItemInfo-1.0")
 
 local myAddon = {}
 
-ItemInfo.RegisterCallback(myAddon, "OnItemInfoReceivedBatch", function(event, itemID)
+ItemInfo.RegisterCallback(myAddon, "OnItemInfoReceivedBatch", function(event)
 	if ItemInfo[42] then
 		print("Received item info")
 	end
