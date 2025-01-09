@@ -19,11 +19,13 @@ items[13262] = {
 	subClass = "Two-Handed Swords",
 	subClassID = Enum.ItemWeaponSubclass.Sword2H,
 	invType = "INVTYPE_2HWEAPON",
+	bindType = Enum.ItemBind.OnAcquire,
 	stackSize = 1,
+	expansionID = LE_EXPANSION_CLASSIC,
 }
 ```
 
-This table is taken directly from the library database and should never be modified.
+This table is taken directly from the library database and must not be modified.
 
 If not cached, will return nil and be queued for caching. A callback will fire when the item gets cached.
 
